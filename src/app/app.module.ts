@@ -7,11 +7,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from "@angular/material/input";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import { SystemsComponent } from './modules/systems/systems.component';
+import { HeaderComponent } from './modules/layouts/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SystemsComponent
+    SystemsComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
