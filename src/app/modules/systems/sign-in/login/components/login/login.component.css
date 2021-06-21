@@ -1,0 +1,22 @@
+.container-fluid {
+  width: 100%;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  /* margin-right: 32px; */
+  align-items: center;
+  justify-content: flex-end;
+}
+
+img.bg-img {
+  width: 59%;
+  height: 100%;
+  /* float: left; */
+  box-shadow: 2px 4px 7px 4px #ddd;
+  margin-right: 5%;
+}
+
+.login-acc {
+  width: 34%;
+  margin-right: 7%;
+}

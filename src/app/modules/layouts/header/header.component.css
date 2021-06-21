@@ -10,3 +10,15 @@ ul {
   list-style-type: none;
   margin-top: 4px;
 }
+
+.demo {
+  color: red;
+}
+
+.test {
+  font-weight: bold;
+}
+
+.content {
+  @apply demo test
+}
