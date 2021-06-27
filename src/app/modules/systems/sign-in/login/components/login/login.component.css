@@ -5,18 +5,65 @@
   display: flex;
   /* margin-right: 32px; */
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 img.bg-img {
-  width: 59%;
+  width: 100%;
   height: 100%;
   /* float: left; */
-  box-shadow: 2px 4px 7px 4px #ddd;
-  margin-right: 5%;
+  /*box-shadow: 2px 4px 7px 4px #ddd;*/
+  /*margin-right: 5%;*/
 }
 
 .login-acc {
-  width: 34%;
-  margin-right: 7%;
+  width: 35%;
+  margin-left: 10%;
+  float: left;
 }
+
+.btn-login {
+  border: 1px solid dodgerblue;
+  background-color: dodgerblue;
+  color: white;
+  font-weight: bold;
+  width: 115px;
+  height: 35px;
+  border-radius: 5px;
+}
+
+mat-label {
+  color: white;
+  position: relative;
+  top: 3px;
+  left: 7px;
+}
+
+/*.example-full-width {*/
+/*  border: 1px solid white;*/
+/*}*/
+
+.example-full-width:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.example-section {
+  color: white;
+  float: right;
+}
+
+.sign-in-register span {
+  color: white;
+}
+
+.link-register {
+  color: #0056b3;
+}
+
+.link-register:hover {
+  text-decoration: underline;
+}
+
+
+
+

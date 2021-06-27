@@ -16,6 +16,9 @@ import { ForgetPassComponent } from './modules/systems/sign-in/forget-pass/forge
 import {LoginComponent} from "./modules/systems/sign-in/login/components/login/login.component";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatButtonModule} from "@angular/material/button";
+import { DialogOverviewComponent } from './modules/systems/dialog-overview/dialog-overview.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
@@ -24,21 +27,26 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
     HeaderComponent,
     FooterComponent,
     ForgetPassComponent,
-    LoginComponent
+    LoginComponent,
+    DialogOverviewComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatDatepickerModule,
-    MatInputModule,
-    MatIconModule,
-    SystemsModule,
-    HeaderModule,
-    ReactiveFormsModule,
-    MatCheckboxModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatDatepickerModule,
+        MatInputModule,
+        MatIconModule,
+        SystemsModule,
+        HeaderModule,
+        ReactiveFormsModule,
+        MatCheckboxModule,
+        MatButtonModule,
+        MatDialogModule
+
+    ],
   providers: [],
+  entryComponents: [DialogOverviewComponent],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
