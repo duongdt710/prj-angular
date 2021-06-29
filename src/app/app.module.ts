@@ -19,6 +19,8 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatButtonModule} from "@angular/material/button";
 import { DialogOverviewComponent } from './modules/systems/dialog-overview/dialog-overview.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import { HomeComponent } from './modules/systems/home/components/home.component';
+import {NotifierModule} from "angular-notifier";
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import {MatDialogModule} from "@angular/material/dialog";
     FooterComponent,
     ForgetPassComponent,
     LoginComponent,
-    DialogOverviewComponent
+    DialogOverviewComponent,
+    HomeComponent,
   ],
     imports: [
         BrowserModule,
@@ -42,8 +45,10 @@ import {MatDialogModule} from "@angular/material/dialog";
         ReactiveFormsModule,
         MatCheckboxModule,
         MatButtonModule,
-        MatDialogModule
+        MatDialogModule,
+      NotifierModule.withConfig({
 
+      })
     ],
   providers: [],
   entryComponents: [DialogOverviewComponent],

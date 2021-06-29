@@ -64,6 +64,11 @@ mat-label {
   text-decoration: underline;
 }
 
+notifier-container > ul {
+  background-color: red;
+}
+
+
 
 
 

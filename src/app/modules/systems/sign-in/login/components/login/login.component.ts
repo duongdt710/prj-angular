@@ -1,8 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {FormControl, Validators, FormGroupDirective, NgForm} from "@angular/forms";
 import {ErrorStateMatcher} from "@angular/material/core";
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from "@angular/material/dialog";
 import {DialogOverviewComponent} from "../../../../dialog-overview/dialog-overview.component";
+import {Router, ActivatedRoute, ParamMap} from "@angular/router";
+import {NotifierModule, NotifierOptions, NotifierService} from "angular-notifier";
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -19,6 +21,38 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class LoginComponent implements OnInit {
   name: any;
+  private readonly notifier: NotifierService;
+
+  notifierDefaultOptions: NotifierOptions = {
+    theme: 'material',
+    behaviour: {
+      autoHide: 5000,
+      onClick: false,
+      onMouseover: 'pauseAutoHide',
+      showDismissButton: true,
+      stacking: 4,
+    },
+    animations: {
+      enabled: true,
+      show: {
+        preset: 'slide',
+        speed: 300,
+        easing: 'ease',
+      },
+      hide: {
+        preset: 'fade',
+        speed: 300,
+        easing: 'ease',
+        offset: 50,
+      },
+      shift: {
+        speed: 300,
+        easing: 'ease',
+      },
+      overlap: 150,
+    },
+  }
+
   emailFormControl = new FormControl('', [
       Validators.required,
       Validators.email
@@ -37,8 +71,11 @@ export class LoginComponent implements OnInit {
   matcher = new MyErrorStateMatcher();
 
   constructor(
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    public router: Router,
+    notifierService: NotifierService
   ) {
+    this.notifier = notifierService;
   }
 
   ngOnInit(): void {
@@ -54,7 +91,6 @@ export class LoginComponent implements OnInit {
       width: '250px',
       data
     });
-    console.log(dialogRef);
     dialogRef.afterClosed().subscribe(result => {
       console.log('the dialog was closed');
     })
@@ -62,8 +98,13 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    console.log(this.emailFormControl.value);
-    console.log(this.passFormControl.value);
+    // console.log(this.emailFormControl.value);
+    // console.log(this.passFormControl.value);
+    if (this.emailFormControl.value && this.passFormControl.value) {
+      this.notifier.notify('success', 'Đăng nhập thành công!');
+      this.router.navigate(['/home']);
+    } else this.notifier.notify('error', 'Bạn vui lòng nhập Email hoặc sđt và password để đăng nhập!');
+
   }
 
 }
