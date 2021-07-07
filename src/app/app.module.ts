@@ -21,6 +21,8 @@ import { DialogOverviewComponent } from './modules/systems/dialog-overview/dialo
 import {MatDialogModule} from "@angular/material/dialog";
 import { HomeComponent } from './modules/systems/home/components/home.component';
 import {NotifierModule} from "angular-notifier";
+import {MatCarouselModule} from "@ngmodule/material-carousel";
+import {MatTabsModule} from "@angular/material/tabs";
 
 @NgModule({
   declarations: [
@@ -31,25 +33,25 @@ import {NotifierModule} from "angular-notifier";
     ForgetPassComponent,
     LoginComponent,
     DialogOverviewComponent,
-    HomeComponent,
+    HomeComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatDatepickerModule,
-        MatInputModule,
-        MatIconModule,
-        SystemsModule,
-        HeaderModule,
-        ReactiveFormsModule,
-        MatCheckboxModule,
-        MatButtonModule,
-        MatDialogModule,
-      NotifierModule.withConfig({
-
-      })
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatIconModule,
+    SystemsModule,
+    HeaderModule,
+    ReactiveFormsModule,
+    MatCheckboxModule,
+    MatButtonModule,
+    MatDialogModule,
+    NotifierModule.withConfig({}),
+    MatCarouselModule.forRoot(),
+    MatTabsModule,
+  ],
   providers: [],
   entryComponents: [DialogOverviewComponent],
   bootstrap: [AppComponent],

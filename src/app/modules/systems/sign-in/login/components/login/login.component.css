@@ -18,8 +18,18 @@ img.bg-img {
 
 .login-acc {
   width: 35%;
+  background-color: #373e4a69;
   margin-left: 10%;
+  height: 59%;
   float: left;
+  padding: 15px;
+}
+
+h3 {
+  color: white;
+  font-family: cursive;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .btn-login {
@@ -66,6 +76,13 @@ mat-label {
 
 notifier-container > ul {
   background-color: red;
+}
+
+.input-acc {
+  height: 30px;
+  border: 1px solid white;
+  color: white;
+  padding-left: 5px;
 }
 
 

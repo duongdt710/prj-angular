@@ -1,11 +1,12 @@
-<p>dialog-overview works!</p>
-
-<div *ngIf="isTime">
-  Đỗ Thành Dương
+<div class="container-fluid">
+  <div class="content">
+    {{this.data.content}}
+  </div>
+  <div class="footer-btn">
+    <button (click)="acceptRequest()">Đồng ý</button>
+    <button >Đóng</button>
+  </div>
 </div>
 
-<div *ngIf="!isTime">
-  ĐỖ THÀNH DƯƠNG
-</div>
 
-<button>click me change data name</button>
+

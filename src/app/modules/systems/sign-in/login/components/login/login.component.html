@@ -4,18 +4,18 @@
 <!--  <img class="bg-img" src="assets/img/bg-login.jpg" alt="">-->
 
   <div class="login-acc">
-    <h3 style="color: white">LOGIN HERE</h3>
+    <h3>LOGIN HERE</h3>
     <form class="example-form" action="" style="display: flex; flex-direction: column; width: 100%">
       <mat-form-field class="example-full-width">
         <mat-label>Email or Phones</mat-label>
-        <input style="height: 30px; border: 1px solid white" type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher" placeholder="Ex. dothanhduong@gmail.com">
+        <input class="input-acc" type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher" placeholder="Ex. dothanhduong@gmail.com">
         <mat-hint>Errors appear instantly!</mat-hint>
         <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')"></mat-error>
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
         <mat-label>Password</mat-label>
-        <input type="password" style="height: 30px; border: 1px solid white" matInput [formControl]="passFormControl" [errorStateMatcher]="matcher" placeholder="">
+        <input class="input-acc" type="password" matInput [formControl]="passFormControl" [errorStateMatcher]="matcher" placeholder="">
         <mat-hint>Errors appear instantly!</mat-hint>
         <mat-error *ngIf="passFormControl.hasError('email') && !passFormControl.hasError('required')"></mat-error>
       </mat-form-field>
@@ -26,7 +26,7 @@
     </section>
 
     <section style="margin-top: 35px">
-      <button class="btn-login" (click)="login()">Login</button>
+      <button class="btn-login" (click)="(this.emailFormControl && this.passFormControl) ? login() : notify('error', 'Bạn vui lòng nhập dữ liệu để đăng nhập!')">Login</button>
     </section>
 
     <section class="sign-in-register" style="padding-top: 23px; padding-right: 45%;">

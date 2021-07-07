@@ -22,6 +22,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class LoginComponent implements OnInit {
   name: any;
   private readonly notifier: NotifierService;
+  isSuccessLogin: boolean = true;
 
   notifierDefaultOptions: NotifierOptions = {
     theme: 'material',
@@ -66,8 +67,6 @@ export class LoginComponent implements OnInit {
   )
 
 
-
-
   matcher = new MyErrorStateMatcher();
 
   constructor(
@@ -101,10 +100,23 @@ export class LoginComponent implements OnInit {
     // console.log(this.emailFormControl.value);
     // console.log(this.passFormControl.value);
     if (this.emailFormControl.value && this.passFormControl.value) {
-      this.notifier.notify('success', 'Đăng nhập thành công!');
-      this.router.navigate(['/home']);
-    } else this.notifier.notify('error', 'Bạn vui lòng nhập Email hoặc sđt và password để đăng nhập!');
-
+      if (((this.emailFormControl.value == "dothanhduongpro@gmail.com") || (this.emailFormControl.value == "0979889156")) && this.passFormControl.value == "anhduongdeptrai96") {
+        this.notifier.notify('success', 'Đăng nhập thành công!');
+        this.router.navigate(['/home']);
+      } else {
+        this.notifier.hideNewest();
+        this.notifier.notify('error', 'Tài khoản đăng nhập của bạn không đúng, vui lòng nhập lại!');
+      }
+    } else {
+      this.notifier.hideNewest();
+      this.notifier.notify('error', 'Bạn vui lòng nhập Email hoặc sđt và password để đăng nhập!');
+    }
   }
+
+  notify(type: string, message: string) {
+    this.notifier.hideNewest();
+    this.notifier.notify(type, message);
+  }
+
 
 }
