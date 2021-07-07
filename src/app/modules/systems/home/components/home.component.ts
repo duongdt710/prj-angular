@@ -45,8 +45,11 @@ export class HomeComponent implements OnInit {
       content: 'Bạn có chắc chắn muốn đăng xuất không?',
       title: 'Đăng xuất phần mềm'
     }
+    // @ts-ignore
     const dialogRef = this.dialog.open(DialogOverviewComponent, {
       width: '250px',
+      backdrop: 'static',
+      keyboard: true,
       data
     });
     dialogRef.afterClosed().subscribe(result => {
