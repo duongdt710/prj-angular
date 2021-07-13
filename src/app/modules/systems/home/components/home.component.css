@@ -6,3 +6,87 @@
   display: inline-block;
   margin: 16px;
 }
+
+.gioi-thieu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.nguon-goc-ve-cafe, .pha-che {
+  text-transform: uppercase;
+  color: #555555;
+  font-size: 20px;
+  text-align: center;
+  font-family: 'BeauLuloClean-OneBold';
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background-color: rgba(255, 241, 208, 0.9);
+  border-radius: 10px;
+}
+
+.gioi-thieu:hover {
+  opacity: 0.5;
+}
+
+.pha-che {
+  padding: 8px 15px;
+  min-width: 60%;
+  background: rgba(255, 241, 208, 0.9);
+  -webkit-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.banner {
+  width: 466px;
+  height: 339px;
+  background-image: url('https://cong-news.appwifi.com/wp-content/uploads/2019/05/11copy.jpg');
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-2 {
+  width: 466px;
+  height: 339px;
+  background-image: url('https://cong-news.appwifi.com/wp-content/uploads/2020/07/Thu%CC%9B%CC%A3c-%C4%91o%CC%9Bn-copy.jpg');
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-col > h6 {
+  font-size: 13px;
+  color: #3c5e2c;
+  text-transform: uppercase;
+  font-family: 'BeauLuloClean-OneBold';
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.flex-col > div {
+  font-size: 13px;
+  color: #3c5e2c;
+  text-transform: uppercase;
+  font-family: inherit;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+footer {
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+}
+
+.flex-col {
+  margin-right: 30px;
+  margin-top: 20px;
+}

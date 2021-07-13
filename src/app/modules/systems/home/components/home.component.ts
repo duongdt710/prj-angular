@@ -12,9 +12,9 @@ import {MatDialog} from "@angular/material/dialog";
 })
 export class HomeComponent implements OnInit {
   slides = [
-    {image: 'assets/img/img_1.jpg'},
-    {image: 'assets/img/img_2.jpg'},
-    {image: 'assets/img/img_3.jpg'}
+    {image: 'https://cong-news.appwifi.com/wp-content/uploads/2021/04/web-slide-2.jpeg'},
+    {image: 'https://cong-news.appwifi.com/wp-content/uploads/2020/10/Upsize-POSM-1-1.jpg'},
+    {image: 'https://cong-news.appwifi.com/wp-content/uploads/2020/06/Đồ-Địa-Phương-Slide-1.jpg'}
   ];
   isColor: string = "white";
 

@@ -100,7 +100,7 @@ export class LoginComponent implements OnInit {
     // console.log(this.emailFormControl.value);
     // console.log(this.passFormControl.value);
     if (this.emailFormControl.value && this.passFormControl.value) {
-      if (((this.emailFormControl.value == "dothanhduongpro@gmail.com") || (this.emailFormControl.value == "0979889156")) && this.passFormControl.value == "anhduongdeptrai96") {
+      if (((this.emailFormControl.value == "dothanhduongpro@gmail.com") || (this.emailFormControl.value == "0979889156")) && this.passFormControl.value == "thanhduongtlu1996") {
         this.notifier.notify('success', 'Đăng nhập thành công!');
         this.router.navigate(['/home']);
       } else {
