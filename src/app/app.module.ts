@@ -23,6 +23,8 @@ import { HomeComponent } from './modules/systems/home/components/home.component'
 import {NotifierModule} from "angular-notifier";
 import {MatCarouselModule} from "@ngmodule/material-carousel";
 import {MatTabsModule} from "@angular/material/tabs";
+import { IntroduceComponent } from './modules/systems/introduce/introduce.component';
+import { MenuFoodComponent } from './modules/systems/menu-food/menu-food.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import {MatTabsModule} from "@angular/material/tabs";
     ForgetPassComponent,
     LoginComponent,
     DialogOverviewComponent,
-    HomeComponent
+    HomeComponent,
+    IntroduceComponent,
+    MenuFoodComponent
   ],
   imports: [
     BrowserModule,

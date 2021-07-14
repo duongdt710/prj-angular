@@ -82,11 +82,26 @@
 footer {
   margin: auto;
   text-align: center;
-  justify-content: center;
+}
+
+footer > .flex {
+  text-align: center;
+  margin: auto;
   display: flex;
+  width: 942px;
+  justify-content: space-between;
 }
 
 .flex-col {
-  margin-right: 30px;
+  /*margin-right: 30px;*/
   margin-top: 20px;
+}
+
+.copyright {
+  font-size: 12px;
+  border-top: 1px solid #232323;
+  padding-top: 25px;
+  padding-bottom: 20px;
+  background: #3c5e2c;
+  color: #fff;
 }

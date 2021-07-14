@@ -37,6 +37,10 @@ export class HomeComponent implements OnInit {
     if ($event.index == 3 && $event.tab.textLabel == 'ĐĂNG XUẤT') {
       this.openDialog();
       // this.route.navigate(['/login']);
+    } else if ($event.index == 1 && $event.tab.textLabel == 'GIỚI THIỆU') {
+      void this.route.navigate(['/introduce']);
+    } else if ($event.index == 2 && $event.tab.textLabel == 'QUẢN LÝ') {
+     void this.route.navigate(['menu-food']);
     }
   }
 
