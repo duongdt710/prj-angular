@@ -5,7 +5,6 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from "@angular/material/dialog
 import {DialogOverviewComponent} from "../../../../dialog-overview/dialog-overview.component";
 import {Router, ActivatedRoute, ParamMap} from "@angular/router";
 import {NotifierModule, NotifierOptions, NotifierService} from "angular-notifier";
-import {LoginService} from "../../../../../service/login_service/login.service";
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -73,8 +72,7 @@ export class LoginComponent implements OnInit {
   constructor(
     public dialog: MatDialog,
     public router: Router,
-    notifierService: NotifierService,
-    public loginService: LoginService
+    notifierService: NotifierService
   ) {
     this.notifier = notifierService;
   }
@@ -103,13 +101,8 @@ export class LoginComponent implements OnInit {
     // console.log(this.passFormControl.value);
     if (this.emailFormControl.value && this.passFormControl.value) {
       if (((this.emailFormControl.value == "dothanhduongpro@gmail.com") || (this.emailFormControl.value == "0979889156")) && this.passFormControl.value == "thanhduongtlu1996") {
-        this.loginService.getDataHome().subscribe((res) => {
-          if (res) {
-            this.notifier.notify('success', 'Đăng nhập thành công!');
-            this.router.navigate(['/home']);
-          }
-        })
-
+        this.notifier.notify('success', 'Đăng nhập thành công!');
+        this.router.navigate(['/home']);
       } else {
         this.notifier.hideNewest();
         this.notifier.notify('error', 'Tài khoản đăng nhập của bạn không đúng, vui lòng nhập lại!');
@@ -119,19 +112,6 @@ export class LoginComponent implements OnInit {
       this.notifier.notify('error', 'Bạn vui lòng nhập Email hoặc sđt và password để đăng nhập!');
     }
   }
-
-  onKeyDownLogin(e: any) {
-    if (e.type == "keydown" && e.code == "Enter") {
-      if (!this.emailFormControl.value) {
-        this.notify('error', 'Vui lòng nhập tên tài khoản Email hoặc Phones để đăng nhập!');
-      } else if (!this.passFormControl.value) {
-        this.notify('error', 'Vui lòng nhập Password để đăng nhập!');
-      } else {
-        this.login();
-      }
-    }
-  }
-
 
   notify(type: string, message: string) {
     this.notifier.hideNewest();

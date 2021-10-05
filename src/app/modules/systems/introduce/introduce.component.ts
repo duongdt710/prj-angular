@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-introduce',
@@ -8,15 +7,9 @@ import {Router} from "@angular/router";
 })
 export class IntroduceComponent implements OnInit {
 
-  constructor(
-    private router: Router
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
-  }
-
-  backTurn() {
-    void this.router.navigate(['/home']);
   }
 
 }

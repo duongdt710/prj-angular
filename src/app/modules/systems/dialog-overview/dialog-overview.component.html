@@ -1,17 +1,12 @@
 <div class="container-fluid" style="padding: 5px">
   <div class="content">
-    {{this.data}}
+    {{this.data.content}}
   </div>
   <div class="footer-btn">
     <button (click)="acceptRequest()">Đồng ý</button>
-    <button (click)="dialog.closeAll()">Đóng</button>
+    <button >Đóng</button>
   </div>
 </div>
 
 
-<!--<div class="container-fluid">-->
-<!--  <h3 class="font-bold uppercase">Bạn vui lòng nhập mã OTP vào ô bên dưới để xác nhận</h3>-->
-<!--  <div class="flex" style="justify-content: center; align-items: center">-->
-<!--      <ngx-otp-input #ngxotp [config]="otpInputConfig" (otpChange)="onChangeOtp($event)" [disable]="isDisable"></ngx-otp-input>-->
-<!--  </div>-->
-<!--</div>-->
+
