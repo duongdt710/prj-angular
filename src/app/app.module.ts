@@ -14,7 +14,7 @@ import {HeaderModule} from "./modules/layouts/header/header/header.module";
 import { FooterComponent } from './modules/layouts/footer/components/footer/footer.component';
 import { ForgetPassComponent } from './modules/systems/sign-in/forget-pass/forget-pass/forget-pass.component';
 import {LoginComponent} from "./modules/systems/sign-in/login/components/login/login.component";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatButtonModule} from "@angular/material/button";
 import { DialogOverviewComponent } from './modules/systems/dialog-overview/dialog-overview.component';
@@ -25,6 +25,13 @@ import {MatCarouselModule} from "@ngmodule/material-carousel";
 import {MatTabsModule} from "@angular/material/tabs";
 import { IntroduceComponent } from './modules/systems/introduce/introduce.component';
 import { MenuFoodComponent } from './modules/systems/menu-food/menu-food.component';
+import {NgxOtpInputModule} from "ngx-otp-input";
+import {MatRadioModule} from "@angular/material/radio";
+import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import {HttpClientModule} from "@angular/common/http";
+import {Http_interceptor} from "./interceptor";
+import {LoginService} from "./modules/service/login_service/login.service";
+import {SharedModule} from "./shared/shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -55,8 +62,15 @@ import { MenuFoodComponent } from './modules/systems/menu-food/menu-food.compone
     NotifierModule.withConfig({}),
     MatCarouselModule.forRoot(),
     MatTabsModule,
+    NgxOtpInputModule,
+    FormsModule,
+    MatRadioModule,
+    HttpClientModule,
+    SharedModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: Http_interceptor, multi: true}
+  ],
   entryComponents: [DialogOverviewComponent],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

@@ -16,3 +16,47 @@
 .mat-dialog-container {
   padding: 10px;
 }
+
+ngx-otp-input .my-super-disable-class {
+
+}
+
+
+.welcome {
+  width: 650px;
+  margin: 36px auto;
+}
+
+.demo-container {
+  display: flex;
+  justify-content: space-between;
+  width: 650px;
+  margin: 0 auto;
+  padding-top: 24px;
+}
+
+.settings, .demo {
+  flex: 1;
+}
+
+.control, .result {
+  margin-bottom: 8px;
+}
+
+.checks, .radios {
+  margin: 16px 0;
+}
+
+.outputs {
+  margin-bottom: 24px;
+}
+
+button {
+  display: block;
+  margin-bottom: 16px;
+}
+
+ngx-otp-input .my-super-box-class {
+  width: 38px;
+  height: 38px;
+}

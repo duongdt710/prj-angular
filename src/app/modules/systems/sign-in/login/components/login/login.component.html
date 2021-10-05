@@ -8,14 +8,14 @@
     <form class="example-form" action="" style="display: flex; flex-direction: column; width: 100%">
       <mat-form-field class="example-full-width">
         <mat-label>Email or Phones</mat-label>
-        <input class="input-acc" type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher" placeholder="Ex. dothanhduong@gmail.com">
+        <input (keydown)="onKeyDownLogin($event)" class="input-acc" type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher" placeholder="Ex. dothanhduong@gmail.com">
         <mat-hint>Errors appear instantly!</mat-hint>
         <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')"></mat-error>
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
         <mat-label>Password</mat-label>
-        <input class="input-acc" type="password" matInput [formControl]="passFormControl" [errorStateMatcher]="matcher" placeholder="">
+        <input (keydown)="onKeyDownLogin($event)" class="input-acc" type="password" matInput [formControl]="passFormControl" [errorStateMatcher]="matcher" placeholder="">
         <mat-hint>Errors appear instantly!</mat-hint>
         <mat-error *ngIf="passFormControl.hasError('email') && !passFormControl.hasError('required')"></mat-error>
       </mat-form-field>
@@ -25,7 +25,7 @@
       <a href="">Forget password</a>
     </section>
 
-    <section style="margin-top: 35px">
+    <section style="margin-top: 35px" >
       <button class="btn-login" (click)="(this.emailFormControl && this.passFormControl) ? login() : notify('error', 'Bạn vui lòng nhập dữ liệu để đăng nhập!')">Login</button>
     </section>
 
